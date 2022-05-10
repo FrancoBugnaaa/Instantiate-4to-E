@@ -1,28 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Instantiator : MonoBehaviour
 {
+    public Text txtUserCLoneAmount;
     public GameObject objectToClone;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-    }
+    int cloneAmount;
 
-    // Update is called once per frame
-    void Update()
+    public void MultipleInstantiate()
     {
-        
-    }
-
-    public void TripleInstantiate()
-    {
+        if(txtUserCLoneAmount.text != ""){
+            cloneAmount = int.Parse(txtUserCLoneAmount.text);
+        }
         int counter = 0;
-        while (counter < 3)
+        while (counter < cloneAmount)
         {
             Instantiate(objectToClone);
             counter++;
